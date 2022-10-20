@@ -1,0 +1,17 @@
+  R-CNN (Region with Convolutional Neuron Networks Features)
+    - 설정한 Region을 CNN의 Feature(입력값)으로 활용하여 Obejct Detection을 수행하는 신경망.
+    - CNN을 활용하여 Object Detection을 최초로 적용 시킨 모델.
+    - CNN의 활용 범위를 Classification에서 Object Detection까지 확장.
+    
+    2Stage : Task -> Regional Proposal(1) -> Regional Classification
+             - 위의 2가지 구조를 처리하기 위하여 4가지 모듈로 나누어져 있다. 
+               1) Region Proposal : 이미지에 있는 데이터와 라벨을 입력한 뒤 물체의 영역(ROI)을 찾는다. 
+               2) (Pretrained)CNN : Proposal된 영역으로부터 고정된 크기의 Feature Vector를 사용하여 Wraping & Crop하여 
+                                    CNN의 입력값으로 사용한다. (CNN은 ImageNet으로 사전 학습된 네트워크이다.)
+               3) SVM : CNN을 통해 출력된 Feature Map을 활용하여 선형 지도학습 모델인 SVM을 통하여 분류한다.
+               4) Bounding Box Regrssion : Regressor를 통하여 Bounding Box Regression을 진행한다.
+             
+               
+             
+    
+    
